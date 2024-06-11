@@ -23,8 +23,28 @@
             </div>
             
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark pt-0 pb-0">
-            <a class="navbar-brand" href="{% url 'home' %}">Urban Research</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-cus pt-3 pb-3">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <div class="brand-container">
+                    <svg width="150" height="50" viewBox="0 0 300 300">
+                        <defs>
+                            <path id="curve" d="M 50 150 A 100 100 0 1 1 250 150" />
+                            <path id="curve2" d="M 250 150 A 100 100 0 1 1 50 150" />
+                        </defs>
+                        <text width="500"> <!-- Adjust the font-size value as needed -->
+                            <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                                URBAN RESEARCH
+                            </textPath>
+                        </text>
+                        <image href="{% static 'logo/logobg.png' %}" x="-40" y="-30" height="380px" width="380px"/>
+                        <text width="500"> <!-- Adjust the font-size value as needed -->
+                            <textPath xlink:href="#curve2" startOffset="50%" text-anchor="middle">
+                                YOU'RE IN GOOD HANDS
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+            </a>
             <button class="navbar-toggler navbar-toggler-right collapsed bg-custom rounded-circle" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon px-2 py-3 "></span>
                 <span class="close px-2 py-1 text-white">X</span>
@@ -41,7 +61,7 @@
                         <a class="nav-link" href="{% url 'services' %}" id="servicesDropdown" role="button" aria-haspopup="false" aria-expanded="false">
                             Services <i class="fas fa-chevron-down arrow-icon"></i>
                         </a>
-                        <div class="dropdown-menu mt-1" aria-labelledby="servicesDropdown">
+                        <div class="dropdown-menu mt-0 border-top-0" aria-labelledby="servicesDropdown">
                             <div class="row">
                                 <div class="col-md-6">
                                     <h2 class="dropdown-header">Project Types We Cover</h2>
@@ -82,10 +102,10 @@
                         <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                     </li>
                 </ul>
-                <a class="btn order-now-btn btn-lg ml-auto" href="{% url 'order_form' %}">Place an Order</a>
+                <a class="btn btn-custom btn-lg ml-auto" href="{% url 'order_form' %}">Place an Order</a>
             </div>
         </nav>
-    </div>
+    </div
     <div class="container-fluid p-0">
         {% block content %}
         {% endblock %}
@@ -97,6 +117,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/26ad0de32b.js" crossorigin="anonymous"></script>
-    
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/YOUR_PROPERTY_ID/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 </body>
 </html>

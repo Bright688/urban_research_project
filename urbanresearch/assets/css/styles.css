@@ -9,6 +9,10 @@ body {
     
 }
 
+.bg-cus{
+    background-color: rgba(35, 37, 35, 0.5);
+}
+
 .navtop::before{
     content: '';
     position: absolute;
@@ -16,7 +20,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(35, 37, 35, 0.8); /* Green background with 80% opacity */
+    background-color: rgba(35, 37, 35, 1); /* Green background with 80% opacity */
     filter: blur(10px); /* Apply blur to the background */
     z-index: -1; /* Place the pseudo-element behind the text */
 }
@@ -36,11 +40,9 @@ body {
 }
 .navbar {
     margin-bottom: 20px;
+    overflow: visible;
 }
 
-.bg-custom{
-  background-color: rgb(7, 163, 7) !important;
-}
 .navbar-toggler.collapsed>.close, .navbar-toggler:not(.collapsed)>.navbar-toggler-icon {
     display:none;
 }
@@ -56,18 +58,49 @@ body {
 }
 
 .navbar-brand {
-    font-family: 'Tangerine', cursive;
     font-size: 28px !important; /* Adjust the size as needed */
     font-weight: bold !important; 
-    background-color: rgb(7, 163, 7);
-    color: white;
     padding-left: 10px;
     padding-right: 15px;
-    text-shadow: 2px 2px green;
-    border-radius: 60px;
     margin-left:50px;
+}
+
+.brand-container {
+    position: absolute;
+    top: -15px; /* Adjust this value as needed */
+    left: 10%; /* Adjust this value as needed */
+    transform: translateX(-30%);
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(15,57,55, 0.1); /* Adjust background color and opacity as needed */
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
     
 }
+
+.navbar-brand svg {
+    overflow: visible;
+    width: 300px; /* Adjust the width as needed */
+    height: 110px; /* Adjust the height as needed */
+
+}
+
+.navbar-brand text {
+    font-size: 25px; /* Adjust font-size for text */
+    fill: #19CFC5; /* Adjust the text color */
+    font-weight: 500 !important;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+.navbar-brand image {
+    overflow: visible;
+}
+
 
 /* Style for arrow rotation */
 .arrow-icon {
@@ -96,19 +129,23 @@ body {
     color: yellowgreen !important /* Active color */
 }
 
-.services:active{
-    font-weight: 700 !important;
-}
 
 /* Custom order now button style */
-.order-now-btn {
-    background-color: #ff6600;
+.btn-custom {
+    background-color: rgba(23, 160, 153, 0.8) !important;
+    color: white !important;
+}
+
+
+.btn-custom2:hover,
+.btn-custom2:focus{
+    background-color: rgba(10, 155, 95, 0.8) !important;
     color: white;
 }
 
-.order-now-btn:hover,
-.order-now-btn:focus {
-    background-color: #078f29 !important;
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: rgba(10, 155, 95, 0.6) !important;
     color: white;
 }
 
@@ -127,45 +164,25 @@ body {
 
 .row .col-md-6:nth-of-type(1){
     padding-left: 5px !important;
+    background-color: rgb(200, 218, 217)!important;
 }
 
 .row .col-md-6:nth-of-type(2){
-    background-color: rgb(7, 163, 7) !important;
+    background-color: rgba(15,57,55, 1)!important;
     padding-left: 5px !important;
 }
 
-/* Centering navbar items on large devices */
-@media (min-width: 992px) {
-    .navbar-nav {
-        margin-left: auto;
-        margin-right: auto;
-    }
+.col-md-6:nth-of-type(2) a{
+    color: white !important;
 }
 
-@media (max-width: 568px) {
-    .dropdown-menu{
-        width:100% !important;
-        padding-bottom: 0px !important;
-        padding-top: 0px !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
-    }
+.col-md-6:nth-of-type(2) h2{
+    color: white !important;
+    
 }
 
-.banner img {
-    width: 100% !important;
-    height: 600px !important;
-    display: block !important;
-    margin-top: -20px !important;
-}
-.order-now-btn {
-    margin-left: auto;
-    background-color: rgb(7, 163, 7) !important;
-    color:white !important;
-    border-radius: 15px !important;
-    font-size: 15px !important;
-    font-family: "Montserrat", sans-serif;
-    padding: 10px 20px !important;
-    font-weight:500 !important;
+.col-md-6:nth-of-type(2) a:hover{
+    color: black !important;
 }
 
 .dropdown-header{
@@ -231,6 +248,189 @@ body {
     margin-top: 10px;
 }
 
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.banner img {
+    width: 100% !important;
+    height: 600px !important;
+    display: block !important;
+    margin-top: -20px !important;
+}
+
+.banner-text{
+    color: white;
+}
+
+.banner-text h1{
+    
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 2px 2px black;
+    margin-top: 55px !important;
+}
+
+.banner-text h2{
+    text-shadow: 2px 2px black;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    font-size: 30px;;
+}
+
+.banner-text p{
+    text-shadow: 2px 2px black;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    font-size: 20px;
+    padding-right: 145px;
+    text-align: justify;
+    
+}
+
+
+ .pricing-calculator {
+    background-color: rgba(15,57,55, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: -65px;
+}
+
+.pricing-calculator h3 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.pricing-calculator .form-group {
+    margin-bottom: 6px;
+    color: white;
+}
+
+#totalPrice {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-group a{
+    background-color: white !important;
+    margin-top: 10px;
+}
+
+.section1{
+    padding-top: 50px;
+}
+
+.section1-heading h1{
+    text-align: center;
+    font-size: 40px !important;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+.section1-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fancy-lines {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between lines as needed */
+    align-items: center;
+}
+
+.line {
+    width: 80px; /* Adjust width as needed */
+    height: 8px; /* Adjust height as needed */
+    background-color: yellowgreen; /* Gold color for the line */
+    border-radius: 10px; /* Ensures the line ends are rounded */
+    margin-right:-23px !important;
+    margin-left:-23px !important;
+}
+
+.round{
+    background-color: yellowgreen; /* Gold color for the line */
+    width: 20px; /* Adjust width as needed */
+    height: 16px;
+    border-radius: 10px !important;
+    padding-left: 10px;
+  
+}
+
+.section1-heading h3{
+    font-size: 20px;
+    margin-top:40px;
+    font-family: "Montserrat", sans-serif;
+    word-spacing: 5px;
+    font-weight: 600;
+}
+
+.section1-text {
+    text-align: center; /* Center align the text */
+    margin: 0 auto; /* Center the div itself */
+    max-width: 800px; /* Optional: limit the max width for better readability */
+}
+
+.section1-text p {
+    text-align: center; /* Justify the text within the paragraph */
+    margin: 20px 0; /* Add some vertical margin */
+    line-height: -1;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature {
+    flex: 1;
+    min-width: 180px;
+    max-width: 300px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initial position for animation */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.feature p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.feature.animate {
+    opacity: 1; /* Final opacity after animation */
+    transform: translateY(0); /* Final position after animation */
+}
+
 /*--------------------------------------------------------------*/
 /*MEDIA QUERIES*/
 /* Centering navbar items on large devices */
@@ -242,7 +442,7 @@ body {
 }
 
 /* Adjust navbar brand alignment for small and medium devices */
-@media (max-width: 991.98px) {
+@media (max-width: 991px) {
     .navbar-brand {
         margin-left: 0;
     }
@@ -256,12 +456,91 @@ body {
     }
 }
 
+
 /* Adjust navbar items alignment for small and medium devices */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
     .navbar-nav {
         text-align: left;
         flex-direction: column;
     }
-
+    .banner img {
+        height: 920px !important;
+    }
+    .banner-text{
+        padding-left:20px !important;
+        padding-right:20px !important;
+    }
+    .banner-text h1{
     
+        font-size: 40px;
+        margin-top: 250px !important;
+        text-align: center;
+    }
+    
+    .banner-text h2{
+        font-size: 25px;
+        text-align: center;
+
+    }
+
+    .banner-text p{
+        font-size: 18px;
+        text-align: justify;
+        padding-left:20px;
+        padding-right:20px;
+
+    }
+
+    .banner-content {
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -60%);  
+        background-color: rgba(35, 37, 35, 0.8);
+    }
+
+    .dropdown-menu{
+        width:100% !important;
+        padding-bottom: 0px !important;
+        padding-top: 0px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    }
+
+
+    .pricing-calculator{
+        margin-top:10px !important;
+        background-color: rgba(15,57,55, 0.8);
+    }
+
+    .navbar-brand svg {
+        overflow: visible;
+        height: 80px; /* Adjust the height as needed */
+    
+    }
+
+    .brand-container {
+        top: 0; /* Adjust this value as needed */
+        left: 8%; /* Adjust this value as needed */
+        width: 70px;
+        height: 70px;
+    }
+
+    .navtop::before{
+        
+        
+        background-color: rgba(35, 37, 35, 1); /* Green background with 80% opacity */
+    }
+
+    .bg-cus{
+        background-color: rgba(35, 37, 35, 0.8);
+    }    
 }
+
+
+/* Centering navbar items on large devices */
+@media (min-width: 992px) {
+    .navbar-nav {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
