@@ -114,6 +114,82 @@ document.addEventListener('DOMContentLoaded', function() {
     features.forEach(feature => {
         observer.observe(feature);
     });
+
+    
 });
 
+//EXPERTS
+document.addEventListener('DOMContentLoaded', function() {
+    const experts = [
+        { name: 'John Doe', field: 'Psychology', img: 'expert1.jpg' },
+        { name: 'Jane Smith', field: 'Literature', img: 'expert2.jpg' },
+        { name: 'Michael Johnson', field: 'Sociology', img: 'expert3.jpg' },
+        { name: 'Sarah Williams', field: 'English', img: 'expert4.jpg' },
+        { name: 'David Brown', field: 'Mathematics', img: 'expert5.jpg' },
+        { name: 'Emily Davis', field: 'Physics', img: 'expert6.jpg' },
+        { name: 'Robert Lee', field: 'Statistics', img: 'expert7.jpg' },
+        { name: 'Mary Thompson', field: 'Chemistry', img: 'expert8.jpg' },
+        { name: 'Andrew Robinson', field: 'Economics', img: 'expert9.jpg' },
+        { name: 'Laura Garcia', field: 'Spanish', img: 'expert10.jpg' }
+    ];
+    const carousel = document.getElementById('expert-carousel');
+            const totalSlides = experts.length;
+            const slidesPerRow = 6;
+            let currentIndex = 0;
+            let autoSlideTimeout;
 
+            // Function to create HTML for slides
+            function createSlides() {
+                let html = '';
+                experts.forEach(expert => {
+                    html += `
+                        <div class="slide">
+                            <div class="card text-center">
+                                <img src="${expert.img}" class="card-img-top" alt="${expert.name}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${expert.name}</h5>
+                                    <p class="card-text">${expert.field}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                return html;
+            }
+
+            // Initial setup
+            carousel.innerHTML = createSlides();
+
+            // Function to slide carousel
+            function slideCarousel(index) {
+                const offset = -index * (100 / slidesPerRow) + '%';
+                carousel.style.transform = `translateX(${offset})`;
+                currentIndex = index;
+                resetAutoSlide();
+            }
+
+            // Auto slide functionality
+            function autoSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                slideCarousel(currentIndex);
+            }
+
+            function resetAutoSlide() {
+                clearTimeout(autoSlideTimeout);
+                autoSlideTimeout = setTimeout(autoSlide, 5000);
+            }
+
+            // Event listeners for buttons
+            document.getElementById('prev-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                slideCarousel(currentIndex);
+            });
+
+            document.getElementById('next-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                slideCarousel(currentIndex);
+            });
+
+            // Start auto sliding
+            resetAutoSlide();
+        });
